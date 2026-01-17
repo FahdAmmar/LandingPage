@@ -69,6 +69,7 @@ const Navbar = () => {
                         </button>
                     </div>
                 </div>
+                {/*dark wihte themes*/}
 
                 {/* القائمة المتنقلة للجوال - عمودي */}
                 {mobileDrawerOpen && (
