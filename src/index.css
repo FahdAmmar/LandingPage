@@ -1,3 +1,41 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* الوضع الافتراضي */
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+  --card: #f3f4f6;
+  --primary: #2563eb;
+}
+
+/* عندما يكون data-theme="dark" */
+:root[data-theme="dark"] {
+  --bg: #0b1220;
+  --text: #e5e7eb;
+  --card: #111827;
+  --primary: #60a5fa;
+}
+
+/* استخدام المتغيرات */
+body {
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: system-ui, Arial;
+}
+
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}

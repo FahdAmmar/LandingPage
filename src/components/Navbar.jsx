@@ -1,7 +1,8 @@
-import { Menu, X } from "lucide-react";
+import { Menu, X, SunMoon, Sun } from "lucide-react";
 import { useState } from "react";
 import logo from "../asstets/logo.png"
 import { navitems } from '../Data/data'
+import { useTheme } from "../themes/DarkTheme"
 
 // مكون قابل لإعادة الاستخدام لعرض عناصر التنقل
 const NavItems = ({ className, onClick }) => {
@@ -14,12 +15,15 @@ const NavItems = ({ className, onClick }) => {
                     </a>
                 </li>
             ))}
+
         </ul>
     );
 };
 
 // مكون قابل لإعادة الاستخدام للأزرار
 const AuthButtons = ({ className, onClick }) => {
+    const { theme, toggleTheme } = useTheme();
+
     return (
         <div className={className}>
             <a href="#" className="py-2 px-3 border rounded-md" onClick={onClick}>
@@ -32,11 +36,19 @@ const AuthButtons = ({ className, onClick }) => {
             >
                 Create an account
             </a>
+            <div style={{ padding: 2 }}>
+                <button className="hidden lg:block" onClick={toggleTheme}>
+                    {theme === "light" ? <SunMoon /> : <Sun />}
+                </button>
+            </div>
+
         </div>
     );
 };
 
 const Navbar = () => {
+    const { theme, toggleTheme } = useTheme();
+
     const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
     const toggleNavbar = () => {
@@ -67,13 +79,14 @@ const Navbar = () => {
                         <button onClick={toggleNavbar}>
                             {mobileDrawerOpen ? <X /> : <Menu />}
                         </button>
+
                     </div>
                 </div>
                 {/*dark wihte themes*/}
 
                 {/* القائمة المتنقلة للجوال - عمودي */}
                 {mobileDrawerOpen && (
-                    <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
+                    <div className={`fixed right-0 z-20  w-full p-12 flex flex-col justify-center items-center lg:hidden ${theme === "light" ? "bg-white" : "bg-[#0b1220]"}`}>
                         <NavItems className="" onClick={closeNavbar} />
                         <AuthButtons className="flex space-x-6 mt-4" onClick={closeNavbar} />
                     </div>

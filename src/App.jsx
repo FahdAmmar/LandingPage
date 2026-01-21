@@ -5,12 +5,12 @@ import FeutureSection from './components/FeutureSection'
 import WorkFlow from './components/WorkFlow'
 function App() {
   return (
-    <>
+    <main className='overflow-hidden'>
       <Navbar />
       <Hero />
       <FeutureSection />
       <WorkFlow />
-    </>
+    </main>
   )
 }
 
