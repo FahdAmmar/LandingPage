@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import FeutureSection from './components/FeutureSection'
 import WorkFlow from './components/WorkFlow'
+import Pricing from './components/Pricing'
 function App() {
   return (
     <main className='overflow-hidden'>
@@ -10,6 +11,7 @@ function App() {
       <Hero />
       <FeutureSection />
       <WorkFlow />
+      <Pricing />
     </main>
   )
 }
