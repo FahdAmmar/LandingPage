@@ -60,8 +60,8 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
-            <div className="container px-4 mx-auto relative lg:text-sm">
+        <nav className="fixed min-w-dvw top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
+            <div className="container px-4 mx-auto  lg:text-sm relative ">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center shrink-0">
                         <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
@@ -86,7 +86,7 @@ const Navbar = () => {
 
                 {/* القائمة المتنقلة للجوال - عمودي */}
                 {mobileDrawerOpen && (
-                    <div className={`fixed right-0 z-20  w-full p-12 flex flex-col justify-center items-center lg:hidden ${theme === "light" ? "bg-white" : "bg-[#0b1220]"}`}>
+                    <div className={`fixed right-0 z-20  w-full p-12 flex flex-col justify-center items-center lg:hidden ${theme === "light" ? "bg-white" : "bg-[#000]"}`}>
                         <NavItems className="" onClick={closeNavbar} />
                         <AuthButtons className="flex space-x-6 mt-4" onClick={closeNavbar} />
                     </div>
