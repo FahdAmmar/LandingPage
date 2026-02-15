@@ -1,8 +1,12 @@
 import React from 'react'
 import { pricingOptions } from '../Data/data'
 import { CheckCircle2 } from 'lucide-react'
+import { useTheme } from '../themes/DarkTheme'
 function Pricing() {
+    const { theme } = useTheme();
+    const isDark = theme === 'dark';
     return (
+
         <section className='pricing-section mt-20'>
             <h1 className='text-3xl sm:text-5xl lg:text-6xl text-center my-8 tracking-wide'>Pricing</h1>
             <div className='flex flex-wrap'>
@@ -26,7 +30,7 @@ function Pricing() {
 
                             ))}
                             </ul>
-                            <a href="#" className='mt-10 inline-block w-full  hover:bg-orange-900 border border-orange-900 transition duration-200 text-white font-semibold py-3 rounded-lg text-center'>Choose Plan</a>
+                            <a href="#" className={`mt-10 inline-block w-full  hover:bg-orange-900 border border-orange-900 transition duration-200 text-white ${isDark ? "" : "bg-amber-700"} font-semibold py-3 rounded-lg text-center`}>Choose Plan</a>
 
                         </div>
                     </div>
